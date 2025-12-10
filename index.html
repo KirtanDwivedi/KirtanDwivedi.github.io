@@ -3,437 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kirtan Dwivedi // AI/ML Architect</title>
-    
+    <title>Kirtan Dwivedi — AI/ML Software Engineer</title>
     <style>
-        /* CSS VARIABLES (Color Palette) */
-        :root {
-            --color-bg: #0a0a1a;
-            --color-text-primary: #f0f0f0;
-            --color-accent-blue: #00ffff; /* Neon Cyan */
-            --color-accent-green: #39ff14; /* Neon Green */
-            --color-card-bg: #1a1a2e;
-            --color-border: #00ffff55;
-            --font-display: 'Space Mono', monospace; /* Monospace for technical feel */
-            --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        /* FONT IMPORT (Optional: Remove if you want pure system fonts) */
-        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-
-        /* BASE STYLES & RESET */
+        /* BASE STYLES & TYPOGRAPHY */
         body {
-            font-family: var(--font-body);
-            background-color: var(--color-bg);
-            color: var(--color-text-primary);
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+            background-color: #f8f8f8; /* Light Off-White Background */
+            color: #1a1a1a; /* Near Black Text */
+            line-height: 1.5;
+            font-size: 18px; /* Slightly larger body text for better readability */
         }
-        
-        /* SCROLL BAR STYLING (The Extra Touch) */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--color-bg); }
-        ::-webkit-scrollbar-thumb { background: var(--color-accent-blue); border-radius: 4px; }
-        
-        /* CONTAINER */
         .container {
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 40px 20px;
         }
 
-        /* LINKS */
-        a {
-            color: var(--color-accent-blue);
-            text-decoration: none;
-            transition: color 0.3s, text-shadow 0.3s;
+        /* HEADER & NAME SECTION */
+        header {
+            padding: 60px 0 40px 0;
+            border-bottom: 1px solid #e0e0e0;
         }
-        a:hover {
-            color: var(--color-accent-green);
-            text-shadow: 0 0 5px var(--color-accent-green);
+        .header-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
-
-        /* HEADINGS */
-        h2 {
-            font-family: var(--font-display);
-            font-size: 2.5em;
-            margin-top: 80px;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            font-weight: 700;
-            position: relative;
-            letter-spacing: 5px;
-        }
-        h2::before {
-            content: '// ';
-            color: var(--color-accent-green);
-        }
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(to right, var(--color-accent-blue), transparent);
-        }
-
-        /* ---------------------------------------------------------------------- */
-        /* 1. HERO SECTION (The Extraordinary Design) */
-        /* ---------------------------------------------------------------------- */
-        #hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-
-        /* Main Headline Animation */
-        .hero-text h1 {
-            font-family: var(--font-display);
-            font-size: 6vw; /* Responsive font size */
-            font-weight: 700;
-            line-height: 1.1;
+        header h1 {
+            font-size: 4em; /* Large, bold typography */
             margin: 0;
-            text-shadow: 0 0 10px var(--color-accent-blue);
-            animation: glitch-fade 3s forwards;
-            opacity: 0;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+        header .tagline {
+            font-size: 1.25em;
+            font-weight: 500;
+            margin-top: 5px;
+            color: #555;
         }
 
-        .hero-text .sub-title {
-            font-family: var(--font-display);
-            font-size: 1.8vw;
-            color: var(--color-accent-green);
+        /* CONTACT LINKS */
+        .contact-links {
             margin-top: 15px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            animation: appear 1s 2.5s forwards;
-            opacity: 0;
-        }
-        
-        /* Glitch/Flicker Effect Keyframes */
-        @keyframes glitch-fade {
-            0% { opacity: 0; transform: translateX(-50px); }
-            5% { opacity: 1; text-shadow: 0 0 20px var(--color-accent-blue), 5px 0 0 var(--color-accent-green); }
-            10% { text-shadow: 0 0 10px var(--color-accent-blue); }
-            15% { text-shadow: -5px 0 0 var(--color-accent-blue), 5px 0 0 var(--color-accent-green); }
-            20% { text-shadow: 0 0 10px var(--color-accent-blue); }
-            100% { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes appear {
-            to { opacity: 1; }
-        }
-
-        /* Contact Ribbon (Sticky/Fixed) */
-        .contact-ribbon {
-            position: fixed;
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%);
-            z-index: 100;
+            font-size: 0.9em;
             display: flex;
             flex-direction: column;
-            background-color: var(--color-card-bg);
-            border-left: 3px solid var(--color-accent-blue);
-            padding: 10px 0;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-        }
-        .contact-ribbon a {
-            padding: 10px 15px;
-            font-size: 0.8em;
-            font-weight: 700;
-            writing-mode: vertical-rl; /* Vertical Text */
-            text-orientation: mixed;
-            transition: background-color 0.3s;
-        }
-        .contact-ribbon a:hover {
-            background-color: var(--color-accent-blue);
-            color: var(--color-bg);
-            text-shadow: none;
-        }
-
-        /* ---------------------------------------------------------------------- */
-        /* 2. SKILLS SECTION */
-        /* ---------------------------------------------------------------------- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .skill-category {
-            padding: 30px;
-            background-color: var(--color-card-bg);
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
-        }
-        .skill-category h3 {
-            font-family: var(--font-display);
-            color: var(--color-accent-green);
-            border-bottom: 2px solid var(--color-accent-green);
-            padding-bottom: 10px;
-            margin-top: 0;
-            font-size: 1.2em;
-        }
-        .skill-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
             gap: 10px;
         }
-        .skill-list li {
-            background-color: var(--color-bg);
-            padding: 5px 10px;
-            border-radius: 3px;
-            font-size: 0.9em;
-            border: 1px solid var(--color-accent-blue);
-            transition: all 0.2s;
+        .contact-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 2px;
+            transition: border-color 0.3s, color 0.3s;
+            font-weight: 600;
         }
-        .skill-list li:hover {
-            background-color: var(--color-accent-blue);
-            color: var(--color-bg);
-            cursor: default;
+        .contact-links a:hover {
+            color: #000;
+            border-color: #000;
         }
 
-        /* ---------------------------------------------------------------------- */
-        /* 3. PROJECTS SECTION */
-        /* ---------------------------------------------------------------------- */
+        /* SECTION HEADINGS */
+        h2 {
+            font-size: 2.5em;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-weight: 900;
+            border-bottom: 5px solid #000;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* SUMMARY & TEXT */
+        .summary p {
+            max-width: 800px;
+            font-size: 1.1em;
+            margin: 0 0 20px 0;
+        }
+
+        /* SKILLS LIST */
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1000px;
+        }
+        .skills-list li {
+            font-size: 0.9em;
+            font-weight: 500;
+            background-color: #e6e6e6;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        /* PROJECTS GRID */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
-        .project-card {
+        .project-item {
             padding: 30px;
-            background-color: var(--color-card-bg);
-            border: 1px solid var(--color-border);
-            border-radius: 12px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-            overflow: hidden;
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+            background-color: #ffffff;
+            transition: box-shadow 0.3s, transform 0.3s;
+            box-shadow: 8px 8px 0px 0px #1a1a1a; /* High-contrast shadow effect */
         }
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 255, 255, 0.4);
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 10px 10px 0px 0px #0077b5; /* LinkedIn Blue on hover */
         }
-
-        .project-card h3 {
-            font-family: var(--font-display);
-            color: var(--color-accent-blue);
+        .project-item h3 {
+            font-size: 1.5em;
             margin-top: 0;
-            font-size: 1.5em;
-        }
-        .project-card .tech-stack {
-            font-size: 0.8em;
-            color: var(--color-accent-green);
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-        .project-card p {
-            font-size: 1em;
-            color: #ccc;
-        }
-        .project-card a.action-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 8px 0;
-            border-bottom: 2px solid var(--color-accent-green);
-            text-transform: uppercase;
+            margin-bottom: 10px;
             font-weight: 700;
+            color: #0077b5; /* Highlight project title */
+        }
+        .project-item .tech-stack {
+            font-size: 0.85em;
+            color: #777;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .live-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 0;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 3px solid #0077b5;
         }
 
-        /* ---------------------------------------------------------------------- */
-        /* 4. FOOTER & CONTACT */
-        /* ---------------------------------------------------------------------- */
-        footer {
-            margin-top: 100px;
-            padding: 40px 0;
-            border-top: 1px solid var(--color-border);
-            text-align: center;
-        }
-        .contact-footer {
-            font-family: var(--font-display);
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
-        .social-icons a {
-            font-size: 1.5em;
-            margin: 0 15px;
-            color: var(--color-accent-blue);
-        }
-
-        /* MEDIA QUERIES */
-        @media (max-width: 900px) {
-            .container { padding: 0 20px; }
-            .hero-text h1 { font-size: 8vw; }
-            .hero-text .sub-title { font-size: 3vw; }
-            .contact-ribbon {
-                position: static;
-                flex-direction: row;
-                justify-content: center;
-                transform: none;
-                border-left: none;
-                border-bottom: 3px solid var(--color-accent-blue);
-                padding: 10px 0;
-                margin-bottom: 30px;
-                box-shadow: none;
+        /* MEDIA QUERIES for responsiveness */
+        @media (max-width: 768px) {
+            .header-grid {
+                grid-template-columns: 1fr;
             }
-            .contact-ribbon a { writing-mode: horizontal-tb; padding: 10px 10px; }
+            header h1 {
+                font-size: 3em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            .contact-links {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="contact-ribbon">
-        <a href="https://linkedin.com/in/kirtan-dwivedi" target="_blank">LinkedIn</a>
-        <a href="https://github.com/KirtanDwivedi" target="_blank">GitHub</a>
-        <a href="mailto:kirtand02@gmail.com" target="_blank">Email</a>
-        <a href="https://leetcode.com/u/Kirtan_2004" target="_blank">LeetCode</a>
-    </div>
+<div class="container">
 
-    <div class="container">
+    <header>
+        <div class="header-grid">
+            <div>
+                <h1>KIRTAN DWIVEDI</h1>
+                <p class="tagline">AI/ML & Computer Vision | Software Engineer (C++/Python)</p>
+            </div>
+            <div class="contact-links" style="text-align: right;">
+                <a href="https://kirtandwivedi.github.io" target="_blank">PORTFOLIO HUB</a>
+                <a href="https://linkedin.com/in/kirtan-dwivedi" target="_blank">LINKEDIN</a>
+                <a href="https://github.com/KirtanDwivedi" target="_blank">GITHUB</a>
+                <a href="mailto:kirtand02@gmail.com" target="_blank">EMAIL ME</a>
+            </div>
+        </div>
+    </header>
 
-        <section id="hero">
-            <div class="hero-text">
-                <h1>
-                    // KIRTAN DWIVEDI
-                </h1>
-                <p class="sub-title">
-                    Deep Learning, Computer Vision, & C++/Python Systems Engineer
+    <section class="summary">
+        <h2>Professional Summary</h2>
+        <p>
+            I am a final-year Computer Engineering student dedicated to building high-performance systems in **C++** and **Python**. I specialize in **AI/ML, Computer Vision, Deep Learning, and Edge AI**, focusing on turning complex problems into clean, efficient, and production-ready solutions.
+        </p>
+        <p>
+            My work emphasizes performance optimization (low-latency, Edge AI) and data analysis. I am currently seeking roles in AI/ML, Computer Vision, and Software Engineering.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Expertise</h2>
+        <ul class="skills-list">
+            <li>C++ (Primary)</li>
+            <li>Python (TensorFlow, PyTorch, NumPy)</li>
+            <li>Deep Learning & CNN</li>
+            <li>Natural Language Processing (NLP)</li>
+            <li>Edge Computing & Optimization</li>
+            <li>Computer Vision (OpenCV)</li>
+            <li>Data Structures & Algorithms</li>
+            <li>Docker & Cloud (GCP/AWS)</li>
+            <li>300+ LeetCode Solved</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Key Projects & Case Studies</h2>
+
+        <div class="projects-grid">
+            <div class="project-item">
+                <h3>AI-Driven Rice Field Monitoring (Capstone)</h3>
+                <div class="tech-stack">Python, TensorFlow, Edge AI, CNN, U-Net</div>
+                <p>
+                    Engineered a real-time AI system on Jetson Nano, achieving 88% weed detection accuracy using U-Net semantic segmentation. Optimized inference pipeline by 50% for 22 FPS throughput.
                 </p>
+                <a href="[LINK_TO_STREAMLIT_DEMO]" class="live-link" target="_blank">View Live Demo &rarr;</a>
             </div>
-        </section>
 
-        <section id="about">
-            <h2>About & Philosophy</h2>
-            <p>
-                I am a final-year Computer Engineering student dedicated to building high-performance systems in **C++** and **Python**. My expertise spans **AI/ML, Computer Vision, Deep Learning, and Edge AI**. I focus on turning complex, scientific problems into clean, highly efficient, and production-ready code.
-            </p>
-            <p>
-                My work is driven by a passion for optimization—whether it's reducing inference latency on edge devices or optimizing data structures for speed. **I ship fast, reliable, and scientifically grounded solutions.**
-            </p>
-        </section>
-
-        <section id="skills">
-            <h2>System Capabilities</h2>
-            <div class="skills-grid">
-                
-                <div class="skill-category">
-                    <h3>Core Programming</h3>
-                    <ul class="skill-list">
-                        <li>C++ (Primary)</li>
-                        <li>Python</li>
-                        <li>Data Structures (STL)</li>
-                        <li>Algorithms</li>
-                        <li>OOP</li>
-                        <li>Linux</li>
-                        <li>SQL</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>AI / ML / CV</h3>
-                    <ul class="skill-list">
-                        <li>Deep Learning</li>
-                        <li>Computer Vision</li>
-                        <li>TensorFlow / Keras</li>
-                        <li>PyTorch</li>
-                        <li>CNN (U-Net)</li>
-                        <li>NLP (Transformers)</li>
-                        <li>OpenCV</li>
-                        <li>PySpark</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>DevOps & Performance</h3>
-                    <ul class="skill-list">
-                        <li>Low-latency Optimization</li>
-                        <li>Edge Computing (Jetson)</li>
-                        <li>Multithreading</li>
-                        <li>Git / GitHub</li>
-                        <li>Docker</li>
-                        <li>Google Cloud (GCP)</li>
-                        <li>BigQuery</li>
-                        <li>Real-time Processing</li>
-                    </ul>
-                </div>
-
+            <div class="project-item">
+                <h3>Ensembled Model Ranking Package (PyPI)</h3>
+                <div class="tech-stack">Python, Machine Learning, PyPI, NLP, TOPSIS</div>
+                <p>
+                    Created a production-ready PyPI package for ranking ensembled NLP models (BART, PEGASUS, T5) using domain classification and TOPSIS algorithms.
+                </p>
+                <a href="[LINK_TO_PACKAGE_DOCS]" class="live-link" target="_blank">View Docs & Install Guide &rarr;</a>
             </div>
-        </section>
 
-        <section id="projects">
-            <h2>Featured Codebase</h2>
-            <div class="projects-grid">
-
-                <div class="project-card">
-                    <h3>AI-Driven Rice Field Monitoring</h3>
-                    <div class="tech-stack">// Python / Edge AI / U-Net CNN / Jetson Nano</div>
-                    <p>
-                        Engineered a real-time weed detection system on **Edge AI** (Jetson Nano), achieving **88% accuracy** and a **50% optimization** in inference latency for 22 FPS throughput in agricultural environments.
-                    </p>
-                    <a href="#" class="action-link" target="_blank">Explore Case Study &rarr;</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Ensembled Model Ranking Package (PyPI)</h3>
-                    <div class="tech-stack">// Python / PyPI / NLP / TOPSIS / BART / T5</div>
-                    <p>
-                        Developed a production-ready **PyPI package** for ranking complex NLP transformer models. Used advanced multi-criteria decision-making (TOPSIS) for automated model evaluation.
-                    </p>
-                    <a href="#" class="action-link" target="_blank">View Documentation &rarr;</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>3D Engine: Shooting Game</h3>
-                    <div class="tech-stack">// C++ / OpenGL (GLUT) / Data Structures</div>
-                    <p>
-                        A showcase of advanced C++ skills, utilizing the OpenGL library to build a full-featured 3D shooting adventure. Demonstrates system architecture and high-level graphics programming.
-                    </p>
-                    <a href="https://github.com/KirtanDwivedi/Shooting_game_openGL" class="action-link" target="_blank">View Source Code &rarr;</a>
-                </div>
-                
+            <div class="project-item">
+                <h3>3D Shooting Game (OpenGL)</h3>
+                <div class="tech-stack">C++, OpenGL (GLUT)</div>
+                <p>
+                    Developed a fully functional 3D shooting adventure game. Demonstrates advanced C++ programming, data structures, and computer graphics proficiency.
+                </p>
+                <a href="https://github.com/KirtanDwivedi/Shooting_game_openGL" class="live-link" target="_blank">View Source Code &rarr;</a>
             </div>
-        </section>
 
-        <footer>
-            <div class="contact-footer">
-                // System Status: Ready for connection.
+             <div class="project-item">
+                <h3>Deep Fake Video Generation Model</h3>
+                <div class="tech-stack">Python, Deep Learning, Generative Models</div>
+                <p>
+                    Exploratory project into generative adversarial networks (GANs) for video manipulation, focusing on model stability and realistic output generation.
+                </p>
+                <a href="https://github.com/KirtanDwivedi/DeepFake" class="live-link" target="_blank">View Source Code &rarr;</a>
             </div>
-            <p style="color: #777;">
-                Kirtan Dwivedi. AI/ML Engineering Portfolio. Deployed via GitHub Pages.
-            </p>
-        </footer>
+        </div>
 
-    </div>
-    
-    <script>
-        // Simple JavaScript for a subtle initial fade-in on other elements
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('section');
-            sections.forEach((section, index) => {
-                // Skip the hero section as it has a complex CSS animation
-                if (section.id === 'hero') return;
+    </section>
 
-                section.style.opacity = 0;
-                section.style.transform = 'translateY(20px)';
-                
-                // Stagger the fade-in of sections after the main title animation finishes (3 seconds)
-                setTimeout(() => {
-                    section.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
-                    section.style.opacity = 1;
-                    section.style.transform = 'translateY(0)';
-                }, 3000 + (index * 400)); 
-            });
-        });
-    </script>
+    <footer style="text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+        <p style="font-size: 0.9em; color: #777;">
+            &copy; Kirtan Dwivedi. Interfaces built, not mocked.
+        </p>
+    </footer>
+
+</div>
 
 </body>
 </html>
