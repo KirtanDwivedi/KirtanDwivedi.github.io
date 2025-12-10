@@ -16,7 +16,7 @@ I focus on transforming complex, real-world problems into clean, efficient, and 
 
 | Platform | Link |
 | :--- | :--- |
-| **Portfolio** | [kirtandwivedi.github.io](https://kirtandwivedi.github.io) |
+| **Portfolio** | [KirtanDwivedi.github.io](https://KirtanDwivedi.github.io) |
 | **LinkedIn** | [linkedin.com/in/kirtan-dwivedi](https://www.linkedin.com/in/kirtan-dwivedi) |
 | **Email** | [kirtand02@gmail.com](mailto:kirtand02@gmail.com) |
 | **LeetCode** | [leetcode.com/u/Kirtan_2004](https://leetcode.com/u/Kirtan_2004) |
