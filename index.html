@@ -3,130 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kirtan Dwivedi | AI/ML & Software Engineer Portfolio</title>
+    <title>Kirtan Dwivedi — AI/ML Software Engineer</title>
     <style>
-        /* General Reset and Font */
+        /* BASE STYLES & TYPOGRAPHY */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
-            color: #333;
-            line-height: 1.6;
+            background-color: #f8f8f8; /* Light Off-White Background */
+            color: #1a1a1a; /* Near Black Text */
+            line-height: 1.5;
+            font-size: 18px; /* Slightly larger body text for better readability */
         }
-        /* Container for Centering and Max Width */
         .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border-radius: 8px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        /* Header Styling */
+        /* HEADER & NAME SECTION */
         header {
-            text-align: center;
-            padding: 20px 0;
-            border-bottom: 3px solid #0077b5; /* LinkedIn Blue */
+            padding: 60px 0 40px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .header-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
         header h1 {
-            color: #2c3e50;
-            margin-bottom: 5px;
-            font-size: 2.5em;
+            font-size: 4em; /* Large, bold typography */
+            margin: 0;
+            font-weight: 900;
+            line-height: 1.1;
         }
-        header p.tagline {
-            color: #0077b5;
-            font-weight: 600;
-            margin-top: 0;
-            font-size: 1.1em;
-        }
-
-        /* Section Headings */
-        h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #ecf0f1;
-            padding-bottom: 5px;
-            margin-top: 30px;
-            font-size: 1.5em;
+        header .tagline {
+            font-size: 1.25em;
+            font-weight: 500;
+            margin-top: 5px;
+            color: #555;
         }
 
-        /* Links and Contact */
+        /* CONTACT LINKS */
         .contact-links {
-            text-align: center;
-            margin-bottom: 20px;
+            margin-top: 15px;
+            font-size: 0.9em;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
         .contact-links a {
-            display: inline-block;
-            margin: 0 10px;
-            color: #0077b5;
+            color: #1a1a1a;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 2px;
+            transition: border-color 0.3s, color 0.3s;
+            font-weight: 600;
         }
         .contact-links a:hover {
-            color: #2c3e50;
-            text-decoration: underline;
+            color: #000;
+            border-color: #000;
         }
 
-        /* Summary Styling */
+        /* SECTION HEADINGS */
+        h2 {
+            font-size: 2.5em;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-weight: 900;
+            border-bottom: 5px solid #000;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* SUMMARY & TEXT */
         .summary p {
-            background-color: #f0f8ff;
-            padding: 15px;
-            border-left: 5px solid #0077b5;
-            border-radius: 4px;
-            font-style: italic;
+            max-width: 800px;
+            font-size: 1.1em;
+            margin: 0 0 20px 0;
         }
 
-        /* Skills Styling */
+        /* SKILLS LIST */
         .skills-list {
             list-style: none;
             padding: 0;
+            margin: 0;
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
+            max-width: 1000px;
         }
         .skills-list li {
-            background-color: #e8f4f8;
-            color: #0077b5;
-            padding: 6px 12px;
-            border-radius: 4px;
             font-size: 0.9em;
             font-weight: 500;
+            background-color: #e6e6e6;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-transform: uppercase;
         }
 
-        /* Projects Styling */
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
         .project-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
+            padding: 30px;
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+            background-color: #ffffff;
+            transition: box-shadow 0.3s, transform 0.3s;
+            box-shadow: 8px 8px 0px 0px #1a1a1a; /* High-contrast shadow effect */
+        }
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 10px 10px 0px 0px #0077b5; /* LinkedIn Blue on hover */
         }
         .project-item h3 {
+            font-size: 1.5em;
             margin-top: 0;
-            color: #2c3e50;
-            font-size: 1.25em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: #0077b5; /* Highlight project title */
         }
         .project-item .tech-stack {
-            font-size: 0.9em;
-            color: #7f8c8d;
-            margin-bottom: 10px;
-        }
-        .project-item p {
-            margin-bottom: 10px;
+            font-size: 0.85em;
+            color: #777;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
         .live-link {
             display: inline-block;
-            padding: 8px 15px;
-            background-color: #2ecc71; /* Green for Live/Action */
-            color: white;
+            margin-top: 15px;
+            padding: 10px 0;
+            color: #1a1a1a;
             text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background-color 0.3s;
+            font-weight: 700;
+            border-bottom: 3px solid #0077b5;
         }
-        .live-link:hover {
-            background-color: #27ae60;
+
+        /* MEDIA QUERIES for responsiveness */
+        @media (max-width: 768px) {
+            .header-grid {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 3em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            .contact-links {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
         }
     </style>
 </head>
@@ -135,75 +168,93 @@
 <div class="container">
 
     <header>
-        <h1>Kirtan Dwivedi</h1>
-        <p class="tagline">AI/ML & Computer Vision | Software Engineer (C++/Python) | Deep Learning, NLP</p>
+        <div class="header-grid">
+            <div>
+                <h1>KIRTAN DWIVEDI</h1>
+                <p class="tagline">AI/ML & Computer Vision | Software Engineer (C++/Python)</p>
+            </div>
+            <div class="contact-links" style="text-align: right;">
+                <a href="https://kirtandwivedi.github.io" target="_blank">PORTFOLIO HUB</a>
+                <a href="https://linkedin.com/in/kirtan-dwivedi" target="_blank">LINKEDIN</a>
+                <a href="https://github.com/KirtanDwivedi" target="_blank">GITHUB</a>
+                <a href="mailto:kirtand02@gmail.com" target="_blank">EMAIL ME</a>
+            </div>
+        </div>
     </header>
 
-    <section class="contact-links">
-        <a href="mailto:kirtand02@gmail.com" target="_blank">&#9993; Email</a>
-        <a href="https://linkedin.com/in/kirtan-dwivedi" target="_blank">in LinkedIn</a>
-        <a href="https://github.com/KirtanDwivedi" target="_blank">&#x2699; GitHub</a>
-        <a href="https://leetcode.com/u/Kirtan_2004" target="_blank">LeetCode (300+ Problems)</a>
-    </section>
-    
     <section class="summary">
-        <h2>Summary</h2>
+        <h2>Professional Summary</h2>
         <p>
-            [cite_start]I'm a final-year Computer Engineering student dedicated to building things that run on Python and C++[cite: 71]. [cite_start]I specialize across **AI/ML, Computer Vision, Deep Learning, and Edge AI**, focusing on turning complex problems into clean, efficient, and production-ready solutions[cite: 72, 74]. [cite_start]I am currently seeking roles in AI/ML, Computer Vision, and Software Engineering[cite: 74].
+            I am a final-year Computer Engineering student dedicated to building high-performance systems in **C++** and **Python**. I specialize in **AI/ML, Computer Vision, Deep Learning, and Edge AI**, focusing on turning complex problems into clean, efficient, and production-ready solutions.
+        </p>
+        <p>
+            My work emphasizes performance optimization (low-latency, Edge AI) and data analysis. I am currently seeking roles in AI/ML, Computer Vision, and Software Engineering.
         </p>
     </section>
 
     <section id="skills">
-        <h2>Core Technical Expertise</h2>
+        <h2>Technical Expertise</h2>
         <ul class="skills-list">
-            [cite_start]<li>C++ (Primary) [cite: 43]</li>
-            [cite_start]<li>Python (TensorFlow, PyTorch, Pandas, NumPy) [cite: 43]</li>
-            [cite_start]<li>Deep Learning & CNN [cite: 58, 59]</li>
-            [cite_start]<li>Natural Language Processing (NLP) [cite: 68]</li>
-            [cite_start]<li>Edge Computing & Low-latency Optimization [cite: 44]</li>
-            [cite_start]<li>Docker & AWS/GCP [cite: 45]</li>
-            [cite_start]<li>SQL, HTML/CSS, JavaScript [cite: 43]</li>
-            [cite_start]<li>Git/GitHub [cite: 60]</li>
-            [cite_start]<li>300+ LeetCode Problems [cite: 48]</li>
+            <li>C++ (Primary)</li>
+            <li>Python (TensorFlow, PyTorch, NumPy)</li>
+            <li>Deep Learning & CNN</li>
+            <li>Natural Language Processing (NLP)</li>
+            <li>Edge Computing & Optimization</li>
+            <li>Computer Vision (OpenCV)</li>
+            <li>Data Structures & Algorithms</li>
+            <li>Docker & Cloud (GCP/AWS)</li>
+            <li>300+ LeetCode Solved</li>
         </ul>
     </section>
 
     <section id="projects">
-        <h2>Key Projects & Live Demos</h2>
+        <h2>Key Projects & Case Studies</h2>
 
-        <div class="project-item">
-            <h3>AI-Driven Rice Field Monitoring and Weed Detection System</h3>
-            <div class="tech-stack">Python, TensorFlow, Edge AI, CNN, U-Net</div>
-            <p>
-                [cite_start]Engineered a real-time AI system on Jetson Nano, achieving 88% weed detection accuracy using U-Net semantic segmentation[cite: 27]. [cite_start]Optimized the inference pipeline by 50% through model quantization for 22 FPS throughput[cite: 29]. [cite_start]Implemented GPS-enabled weed localization to help reduce chemical usage by 40%[cite: 28].
-            </p>
-            <a href="#" class="live-link" target="_blank">View Live Demo (Streamlit App)</a>
-        </div>
+        <div class="projects-grid">
+            <div class="project-item">
+                <h3>AI-Driven Rice Field Monitoring (Capstone)</h3>
+                <div class="tech-stack">Python, TensorFlow, Edge AI, CNN, U-Net</div>
+                <p>
+                    Engineered a real-time AI system on Jetson Nano, achieving 88% weed detection accuracy using U-Net semantic segmentation. Optimized inference pipeline by 50% for 22 FPS throughput.
+                </p>
+                <a href="[LINK_TO_STREAMLIT_DEMO]" class="live-link" target="_blank">View Live Demo &rarr;</a>
+            </div>
 
-        <div class="project-item">
-            <h3>Ensembled Model Ranking Package (PyPI)</h3>
-            <div class="tech-stack">Python, Machine Learning, PyPI, BART, PEGASUS, T5, TOPSIS</div>
-            <p>
-                [cite_start]Created a production-ready PyPI package for ranking ensembled NLP models using domain classification and TOPSIS algorithms[cite: 34]. [cite_start]Included state-of-the-art transformer models (BART, PEGASUS, T5) for comparative analysis and implemented a comprehensive evaluation pipeline[cite: 35, 36].
-            </p>
-            <a href="#" class="live-link" target="_blank">View Live Documentation & Install Guide</a>
-        </div>
+            <div class="project-item">
+                <h3>Ensembled Model Ranking Package (PyPI)</h3>
+                <div class="tech-stack">Python, Machine Learning, PyPI, NLP, TOPSIS</div>
+                <p>
+                    Created a production-ready PyPI package for ranking ensembled NLP models (BART, PEGASUS, T5) using domain classification and TOPSIS algorithms.
+                </p>
+                <a href="[LINK_TO_PACKAGE_DOCS]" class="live-link" target="_blank">View Docs & Install Guide &rarr;</a>
+            </div>
 
-        <div class="project-item">
-            <h3>Image Descriptor with CNN</h3>
-            <div class="tech-stack">Python, Computer Vision, OpenCV, CNN</div>
-            <p>
-                [cite_start]Developed an optimized image descriptor using CNNs for semantic identification and gesture recognition[cite: 38]. [cite_start]Implemented efficient feature extraction with model serialization for fast inference in real-time applications[cite: 39].
-            </p>
-            <a href="#" class="live-link" target="_blank">View Live Demo (Streamlit App)</a>
+            <div class="project-item">
+                <h3>3D Shooting Game (OpenGL)</h3>
+                <div class="tech-stack">C++, OpenGL (GLUT)</div>
+                <p>
+                    Developed a fully functional 3D shooting adventure game. Demonstrates advanced C++ programming, data structures, and computer graphics proficiency.
+                </p>
+                <a href="https://github.com/KirtanDwivedi/Shooting_game_openGL" class="live-link" target="_blank">View Source Code &rarr;</a>
+            </div>
+
+             <div class="project-item">
+                <h3>Deep Fake Video Generation Model</h3>
+                <div class="tech-stack">Python, Deep Learning, Generative Models</div>
+                <p>
+                    Exploratory project into generative adversarial networks (GANs) for video manipulation, focusing on model stability and realistic output generation.
+                </p>
+                <a href="https://github.com/KirtanDwivedi/DeepFake" class="live-link" target="_blank">View Source Code &rarr;</a>
+            </div>
         </div>
 
     </section>
-    
-    <hr style="margin-top: 30px; border-color: #ecf0f1;">
-    <p style="text-align: center; font-size: 0.8em; color: #7f8c8d;">
-        &copy; Kirtan Dwivedi. Deployed via GitHub Pages.
-    </p>
+
+    <footer style="text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+        <p style="font-size: 0.9em; color: #777;">
+            &copy; Kirtan Dwivedi. Interfaces built, not mocked.
+        </p>
+    </footer>
 
 </div>
 
